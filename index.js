@@ -29,10 +29,10 @@ const configuration = {
   },
 };
 
-const oidc = new Provider('authorization-server-production.up.railway.app', configuration);
+const oidc = new Provider('http://localhost:3000', configuration);
 
 app.use("/oidc",oidc.callback());
 
-// app.listen(3000, function () {
-//   console.log('OIDC is listening on port 3000!');
-// });
+app.listen(3000, function () {
+  console.log('OIDC is listening on port 3000!');
+});
